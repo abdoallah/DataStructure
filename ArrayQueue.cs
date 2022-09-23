@@ -9,15 +9,15 @@ namespace DataStructure
 	{
 		const int Max_Length = 100; 
 		private int Rear { get; set; }
-		private int front { get; set; }
+		private int Front { get; set; }
 		private int Length { get; set; }
 		int [] arr = new int [Max_Length];
         
-        public ArrayQueue(int Front= 0 , int Length = 0 )
+        public ArrayQueue(int front= 0 , int length = 0 )
 		{
-			front= Front ;
+			Front= Front ;
 			Rear= Max_Length-1 ;
-			Length = Length ;
+			Length = length ;
 		}
 
 		bool IsEmpty()
@@ -49,7 +49,7 @@ namespace DataStructure
             if (IsEmpty())
                Console.WriteLine("empty Queue ... ");
 			else
-				front = (front + 1) % Max_Length;
+				Front = (Front + 1) % Max_Length;
 				--Length;
         }
 		public int GetFront()
@@ -57,7 +57,7 @@ namespace DataStructure
             if (IsEmpty())
                 return 0;
             else 
-                return arr[front];
+                return arr[Front];
 			
         }
         #region getFront Call by reference
@@ -85,11 +85,38 @@ namespace DataStructure
         }
        public void Print()
         {
-            for (int i = front; i !=Rear+1; i= (i+1)%Max_Length)
+            for (int i = Front; i !=Rear+1; i= (i+1)%Max_Length)
             {
-              Console.WriteLine(arr[i]);
+              Console.Write(arr[i] +" ");
             }
         
+        }
+        public int QueueSearch(int Element)
+        {
+            int position = -1; 
+            if (!IsEmpty())
+            {
+                for (int i = Front; i != Rear ; i =(i+1)%Max_Length)
+                {
+                    if (arr[i] == Element)
+                    {
+                        position = i;
+                        break;
+                    }
+                    if (position == -1)
+                    {
+                        if (arr[Rear] == Element)
+                        {
+                            position = arr[Rear];
+
+                        }
+                    }
+                }
+                
+            }else
+            { Console.WriteLine("Empty Queue"); }
+            
+            return position;    
         }
 	}
 }

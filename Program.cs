@@ -22,11 +22,29 @@ namespace DataStructure
 
             #region Queue Call 
 
-            ArrayQueue arrayQueue = new ArrayQueue();
-            Q.Enqueue(10);
-            Q.Enqueue(20);
-            Q.Enqueue(30);
-            Q.Enqueue(50);
+            //ArrayQueue arrayQueue = new ArrayQueue();
+            //arrayQueue.Enqueue(1);
+            //arrayQueue.Enqueue(2);
+            //arrayQueue.Enqueue(3);
+            //arrayQueue.Enqueue(4);
+            //arrayQueue.Enqueue(5);
+            //arrayQueue.Enqueue(6);
+            //arrayQueue.DeleteQueue();
+            //arrayQueue.Print();
+            //Console.WriteLine(arrayQueue.GetFront());
+            // Console.WriteLine(arrayQueue.GetRear());
+            // arrayQueue.DeleteQueue();
+            // arrayQueue.Print();
+            //Console.WriteLine(arrayQueue.QueueSearch(6));
+
+            
+            //arrayQueue.Print();
+            //arrayQueue.Enqueue(50);
+            //arrayQueue.Print();
+
+            
+          
+
             #endregion
         }
     }
